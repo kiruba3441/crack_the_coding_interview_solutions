@@ -10,12 +10,12 @@ class StringifyInteger{
       while(val>0){
         int rem = val%10;
         val = val/10;
-        intStack.push(val);
+        intStack.push(rem);
       }
       StringBuffer intStringBuffer = new StringBuffer();
       if(isNegative)
         intStringBuffer.append("-");
-      String[] intStringValues = ["0","1","2","3","4","5","6","7","8","9"];
+      String[] intStringValues = new String[]{"0","1","2","3","4","5","6","7","8","9"};
       while(!intStack.empty()){
           intStringBuffer.append(intStringValues[intStack.pop()]);
       }
@@ -25,9 +25,9 @@ class StringifyInteger{
   }
   public static void main(String[] args){
       StringifyInteger sti = new StringifyInteger();
-      String result = sti.strinfigy(-123);
+      String result = sti.stringify(-123);
       System.out.println(result);
-      String result = sti.strinfigy(1235);
+      result = sti.stringify(1235);
       System.out.println(result);
   }
 }
